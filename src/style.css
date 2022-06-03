@@ -1,9 +1,101 @@
 
+
+
+:root {
+  --default-icon-width: 48px;
+  --small-icon-width: 48px;
+  --default-transition-time: 0.3s;
+}
+
 html, body, #app {
   width: 100%;
   height: 100%;
 }
 body{
   margin: 0;
+  font-family: Helvetica, sans,Arial;
+  background: #f1f2f3;
 }
 
+.name-showcase{
+  color: black;
+  position: absolute;
+  top:0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.name-showcase svg.background {
+  position: absolute;
+  left:0;
+  bottom: 0%;
+}
+.name-holder {
+  color: #515253;
+  position: absolute;
+  bottom:12%;
+  left: 13%;
+  font-size: 2.5em;
+  font-weight: bold;
+  display: block;
+  /* background-color: #777; */
+  width: 30%;
+  text-align: center;
+  animation: fadeIn ease 10s;
+}
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.social {
+  position: absolute;
+  top: 0%;
+  /* transform: translate(0,-50%); */
+  right: 0;
+  width: 60px;
+  transition: var(--def-transition-time);
+}
+
+.social-hover-icon, .social-icon {
+  width: var(--default-icon-width);
+  height: var(--default-icon-width);
+  cursor: pointer;
+  transition: var(--def-transition-time);
+  border-radius: 100%;
+}
+
+.social-hover-icon:hover, .social-icon:hover {
+  width: 60px;
+  height: 60px;
+  background-color: #e1e2e3;
+}
+.social-hover-icon:active, .social-icon:active {
+  background-color: #f1f2f3;
+}
+
+.social-hover-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.social-icons-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 60vh;
+  justify-content: space-evenly;
+}
+
+.social-icon {
+  width: var(--small-icon-width);
+}
+.social-icon img {
+  width: 100%;
+  height: 100%;
+}
